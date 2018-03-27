@@ -2,13 +2,17 @@ $(function () {
     // solving the active menu problem
     switch (menu) {
         case 'About us':
-            $('#about').addClass('nav-item active');
+            $('#about').addClass('active');
             break;
         case 'Contact us':
-            $('#contact').addClass('nav-item active');
+            $('#contact').addClass('active');
+            break;
+        case 'All Products':
+            $('#listProducts').addClass('active');
             break;
         default:
-            $('#home').addClass('nav-item active');
+            $('#listProducts').addClass('active');
+            $('#a_'+menu).addClass('active');
             break;
     }
 })
