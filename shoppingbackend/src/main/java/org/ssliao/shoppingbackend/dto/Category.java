@@ -1,11 +1,33 @@
 package org.ssliao.shoppingbackend.dto;
 
+import javax.persistence.*;
+
+@Entity
 public class Category {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String name;
+
     private String description;
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", active=" + active +
+                '}';
+    }
+
+    @Column(name = "image_url")
+
     private String imageUrl;
+    @Column(name = "is_active")
     private boolean active = true;
 
 
