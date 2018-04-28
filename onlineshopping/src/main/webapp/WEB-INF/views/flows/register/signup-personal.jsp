@@ -1,6 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
   User: liaoshuisheng
+  Date: 2018/4/28
+  Time: 21:13
+  To change this template use File | Settings | File Templates.
+--%>
+<%--
+  Created by IntelliJ IDEA.
+  User: liaoshuisheng
   Date: 2018/3/24
   Time: 23:39
   To change this template use File | Settings | File Templates.
@@ -52,37 +59,23 @@
 <div class="wrapper">
 
     <!-- Navigation -->
-    <%@include file="./shared/navbar.jsp" %>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="${flowExecutionContext}&_eventId_home">Home</a>
+            </div>
+        </div>
+    </nav>
 
     <div class="content">
-        <!-- Page Content -->
-        <c:if test="${userClickHome == true}">
-            <%@include file="home.jsp" %>
-        </c:if>
 
-        <c:if test="${userClickAbout == true}">
-            <%@include file="about.jsp" %>
-        </c:if>
-
-        <c:if test="${userClickContact == true}">
-            <%@include file="contact.jsp" %>
-        </c:if>
-
-        <c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
-            <%@include file="listProducts.jsp" %>
-        </c:if>
-
-        <c:if test="${userClickShowProduct == true }">
-            <%@include file="singleProduct.jsp" %>
-        </c:if>
-
-        <c:if test="${userClickManageProducts == true }">
-            <%@include file="manageProduct.jsp" %>
-        </c:if>
+        <div class="container">
+            <h3>This will be triggered by flow!</h3>
+        </div>
     </div>
 
     <!-- Footer -->
-    <%@include file="./shared/footer.jsp" %>
+    <%@include file="../../shared/footer.jsp" %>
 
     <!-- Bootstrap core JavaScript -->
     <script src="${js}/jquery.min.js"></script>

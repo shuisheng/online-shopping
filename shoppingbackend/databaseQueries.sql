@@ -62,3 +62,30 @@ VALUES ('PRDDEF123DEFX', 'Sumsung s7', 'samsung', 'A smart phone by samsung!', 3
 
 INSERT INTO product ( code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id)
 VALUES ('PRDPQR123WGTX', 'Google Pixel', 'google', 'This is one of the best android smart phone available in the market right now!', 57000, 5, true, 3, 2);
+
+
+-- the address table to store the user billing and shipping addresses
+CREATE TABLE address (
+  id IDENTITY,
+  user_id int,
+  address_line_one VARCHAR(100),
+  address_line_two VARCHAR(100),
+  city VARCHAR(20),
+  state VARCHAR(20),
+  country VARCHAR(20),
+  postal_code VARCHAR(10),
+  is_billing BOOLEAN,
+  is_shipping BOOLEAN,
+  CONSTRAINT fk_address_user_id FOREIGN KEY (user_id ) REFERENCES user_detail (id),
+  CONSTRAINT pk_address_id PRIMARY KEY (id)
+);
+
+-- the cart table to store the user cart top-level details
+CREATE TABLE cart (
+  id IDENTITY,
+  user_id int,
+  grand_total DECIMAL(10,2),
+  cart_lines int,
+  CONSTRAINT fk_cart_user_id FOREIGN KEY (user_id ) REFERENCES user_detail (id),
+  CONSTRAINT pk_cart_id PRIMARY KEY (id)
+);
